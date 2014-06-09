@@ -10,7 +10,7 @@ def application(environ, start_response):
 
     if environ["PATH_INFO"] == "/" or environ["PATH_INFO"] == "/inventory":
         inventory = controller.list_inventory()
-        return json.dumps(inventory)
+        response_body = json.dumps(inventory)
 
     elif environ["PATH_INFO"] == "/goodbye":
         response_body = "Ok see ya"
